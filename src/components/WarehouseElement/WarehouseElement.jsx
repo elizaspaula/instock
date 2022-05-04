@@ -31,6 +31,7 @@ function WarehouseElement({
               <img
                 className="warehouse-item__warehouse-chevron"
                 src={chevronIcon}
+                alt="chevron icon"
               />
             </Link>
           </div>

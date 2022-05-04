@@ -27,7 +27,7 @@ class AddWarehouse extends React.Component {
     formvalid: false,
   };
 
-// this tracks each field and adds to the state. Once the state is changed it checks if the input is valid
+  // this tracks each field and adds to the state. Once the state is changed it checks if the input is valid
   handleChange = (event) => {
     this.setState(
       {
@@ -49,7 +49,8 @@ class AddWarehouse extends React.Component {
     let phonevalidation = this.state.phonevalid;
     let emailvalidation = this.state.emailvalid;
     const re = /^[a-zA-Z]/;
-    const emailRe = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const emailRe =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const addRe = /[A-za-z0–9_]/;
     const phoneRe = /^[0-9]{10}$/;
     switch (field.name) {
@@ -90,40 +91,43 @@ class AddWarehouse extends React.Component {
       default:
         break;
     }
-    this.setState({
-      whnamevalid: whnamevalidation,
-      addressvalid: addressvalidation,
-      cityvalid: cityvalidation,
-      countryvalid: countryvalidation,
-      namevalid: namevalidation,
-      positionvalid: positionvalidation,
-      phonevalid: phonevalidation,
-      emailvalid: emailvalidation,
-    }, this.validateForm);
+    this.setState(
+      {
+        whnamevalid: whnamevalidation,
+        addressvalid: addressvalidation,
+        cityvalid: cityvalidation,
+        countryvalid: countryvalidation,
+        namevalid: namevalidation,
+        positionvalid: positionvalidation,
+        phonevalid: phonevalidation,
+        emailvalid: emailvalidation,
+      },
+      this.validateForm
+    );
   }
   //checks if the form is valid after every changed in the field and updates the status
   validateForm() {
     this.setState({
-      formvalid: this.state.addressvalid &&
-      this.state.whnamevalid &&
-      this.state.cityvalid &&
-      this.state.countryvalid &&
-      this.state.namevalid &&
-      this.state.positionvalid &&
-      this.state.phonevalid &&
-      this.state.emailvalid
-    })
+      formvalid:
+        this.state.addressvalid &&
+        this.state.whnamevalid &&
+        this.state.cityvalid &&
+        this.state.countryvalid &&
+        this.state.namevalid &&
+        this.state.positionvalid &&
+        this.state.phonevalid &&
+        this.state.emailvalid,
+    });
   }
   //checks if the fieldValid state is true
-  isTrue(fieldValid){
-    return fieldValid === true
+  isTrue(fieldValid) {
+    return fieldValid === true;
   }
   //takes in field and validity of the field to render error
   showInputError(field, status) {
     if (!status) {
       field.classList.add("details__input--error");
       field.nextSibling.style.display = "block";
-
     } else {
       field.classList.remove("details__input--error");
       field.nextSibling.style.display = "none";
@@ -133,9 +137,9 @@ class AddWarehouse extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.setState({
-      submit:true
-    })
-    //if form is valid it will take form field information and send post axios request 
+      submit: true,
+    });
+    //if form is valid it will take form field information and send post axios request
     if (this.state.formvalid) {
       const newWarehouse = {
         whname: this.state.whname,
@@ -154,17 +158,17 @@ class AddWarehouse extends React.Component {
       addWarehouse
         .then((res) => {
           window.alert(res.data);
-          this.props.history.push("/warehouses")
+          this.props.history.push("/warehouses");
         })
         .catch((err) => {
           window.alert(err);
         });
-    //it will check every field and validate it
+      //it will check every field and validate it
     } else {
-      const inputlist = e.target.querySelectorAll("input")
+      const inputlist = e.target.querySelectorAll("input");
       inputlist.forEach((field) => {
         this.validateField(field, field.value);
-      })
+      });
     }
   };
   render() {
@@ -320,7 +324,7 @@ class AddWarehouse extends React.Component {
             type="submit"
             form="warehouse-form"
             className="save-btn"
-            id ="add-warehouse"
+            id="add-warehouse"
           >
             +Add Warehouse
           </button>
