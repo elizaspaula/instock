@@ -1,0 +1,66 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+.header {
+  background-color: $navigation-color;
+  font-family: "Titillium Web";
+}
+
+.nav {
+  @include flexed(column, center, center);
+  width: 100%;
+  padding: 1.5rem 1rem 5.5rem 1rem;
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem 2rem 6rem 2rem;
+    max-width: 63.375rem;
+    margin: 0 auto;
+  }
+  @include desktop {
+    padding: 2rem 0rem 6rem 0rem;
+  }
+  &__list {
+    list-style: none;
+    @include flexed(row, space-evenly, center);
+    width: 100%;
+    @include tablet {
+      justify-content: flex-end;
+    }
+  }
+  &__link {
+    font-size: 0.8125rem;
+    text-align: center;
+    padding: 0.719rem 0;
+    color: $outline-divider-color;
+    font-weight: 600;
+    width: 100%;
+    &:hover {
+      // border-bottom: 1px solid $global-color;
+      text-decoration: underline;
+      text-underline-offset: 0.1rem;
+      text-decoration-thickness: 1px;
+    }
+    @include tablet {
+      font-size: 0.875rem;
+      min-width: 7.185rem;
+      width: 15%;
+    }
+    @include desktop {
+      width: 15%;
+    }
+    &--highlight {
+      background-color: $global-text-color;
+      border-radius: 20px;
+      color: $global-color;
+    }
+  }
+
+  &__logo {
+    text-decoration: none;
+    padding-bottom: 1.5rem;
+    @include tablet {
+      padding-bottom: 0;
+    }
+  }
+}

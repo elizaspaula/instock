@@ -1,0 +1,100 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+
+.inventory-details {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid $outline-divider-color;
+  font-size: 0.8125rem;
+
+  @include tablet {
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  @include desktop {
+    padding: 1.5rem 2.5rem;
+    font-size: 0.875rem;
+  }
+
+  &__title {
+    color: $table-placeholders-color;
+    text-transform: uppercase;
+    padding-bottom: 0.25rem;
+    padding-top: 1rem;
+
+    @include tablet {
+      padding-top: 0;
+    }
+  }
+
+  &__text {
+    color: $global-text-color;
+
+    @include tablet {
+      padding-bottom: 2rem;
+      padding-right: 1.5rem;
+      width: 18.4375rem;
+    }
+
+    @include desktop {
+      width: 26.8125rem;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 5.9375rem;
+    @include tablet {
+      gap: 6.0625rem;
+    }
+  }
+
+  &__tag {
+    border-radius: 20px;
+  }
+  &__status {
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+    text-align: center;
+    padding: 4px;
+    font-weight: $semi-bold;
+    @include tablet {
+      font-size: 0.75rem;
+    }
+  }
+
+  &__green {
+    width: 4.0625rem;
+    color: $label-color;
+    background-color: rgb(21 132 99 / 7%);
+  }
+
+  &__red {
+    height: 1.75rem;
+    width: 5.375rem;
+    color: $delete-color;
+    background-color: rgb(201 69 21 / 7%);
+  }
+
+  @include tablet {
+    .border {
+      border-right: 1px solid $outline-divider-color;
+    }
+
+    .space {
+      padding-left: 2.5rem;
+    }
+  }
+}
+
+.loading-message {
+  text-align: center;
+  margin: 1rem 0;
+  color: $outline-divider-color;
+}

@@ -1,0 +1,28 @@
+@use "./colors" as *;
+@use "./mixins" as *;
+@use "./variables" as *;
+@use "./typography" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a {
+  line-height: 1;
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+body {
+  font-family: "Titillium Web";
+}

@@ -1,0 +1,11 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles//partials/typography" as *;
+
+.warehousesHeader{
+    padding:1.5rem 1rem;
+    &__title{
+        padding-bottom: 1.5rem;
+    }
+}

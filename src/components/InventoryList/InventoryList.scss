@@ -1,0 +1,174 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+
+//Mobile
+.items {
+  padding: 0 1.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  font-weight: $regular;
+
+  @include tablet {
+    display: none;
+  }
+
+  &__list {
+    border-top: 1px solid $outline-divider-color;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__header {
+    padding-top: 1rem;
+    padding-bottom: 0.25rem;
+    color: $table-placeholders-color;
+    text-transform: uppercase;
+  }
+
+  &__name {
+    font-weight: $semi-bold;
+    color: $interactive-color;
+    display: flex;
+    cursor: pointer;
+  }
+
+  &__tag {
+    height: 24px;
+    width: 86px;
+    border-radius: 20px;
+  }
+
+  &__status {
+    height: 24px;
+    width: 86px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+    text-align: center;
+    padding: 4px 8px 4px 8px;
+  }
+
+  &__green {
+    color: $label-color;
+    background-color: rgb(21 132 99 / 7%);
+  }
+
+  &__red {
+    color: $delete-color;
+    background-color: rgb(201 69 21 / 7%);
+  }
+
+  &__buttons {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button {
+    border-style: none;
+    cursor: pointer;
+    background-color: transparent;
+  }
+}
+
+//Tablet - Desktop
+.table {
+  display: none;
+
+  @include tablet {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    line-height: 22px;
+
+    &__head {
+      background-color: rgba(247, 248, 249, 0.7);
+      height: 2.5rem;
+    }
+
+    &__header {
+      text-align: left;
+      text-transform: uppercase;
+      color: $table-placeholders-color;
+      padding: 1rem 0 1rem 2rem;
+
+      @include desktop {
+        padding: 1rem 0 1rem 2.5rem;
+      }
+    }
+
+    &__row {
+      border-bottom: 1px solid $outline-divider-color;
+
+      &:hover {
+        background-color: rgba(46, 102, 229, 0.07);
+      }
+    }
+
+    &__data {
+      padding: 1rem 0 1rem 2rem;
+
+      @include desktop {
+        padding: 1rem 0 0 1rem 2.5rem;
+      }
+    }
+
+    .name {
+      font-weight: $semi-bold;
+      color: $interactive-color;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    &__tag {
+      border-radius: 20px;
+    }
+
+    &__status {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      line-height: 1.125rem;
+      text-align: center;
+      padding: 4px;
+      font-weight: $semi-bold;
+    }
+
+    &__green {
+      width: 4.0625rem;
+      height: 1.75rem;
+      color: $label-color;
+      background-color: rgb(21 132 99 / 7%);
+    }
+
+    &__red {
+      height: 1.75rem;
+      width: 5.375rem;
+      color: $delete-color;
+      background-color: rgb(201 69 21 / 7%);
+    }
+
+    &__label {
+      display: flex;
+      flex-direction: row;
+      gap: 0.3125rem;
+      align-items: center;
+    }
+
+    .icons {
+      padding-right: 2rem;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+@use '../../styles/partials/colors' as *;
+.footer {
+    padding-bottom: 2.5rem;
+    text-align: center;
+    color: $table-placeholders-color;
+}

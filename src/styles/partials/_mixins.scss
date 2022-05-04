@@ -1,0 +1,45 @@
+@use "./colors" as *;
+@use "./variables" as *;
+
+//Break-points
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin flexed($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin button-ify ($width: 100%) {
+  border-style: none;
+  background-color:$interactive-color;
+  color: $global-color;
+  width: $width;
+  height: 2.25rem;
+  border-radius: 1.25rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.5s ease-in-out;
+  padding: 8px 8px;
+  @include flexed(row, center, center);
+  gap: 3px;
+  &:hover {
+    background-color: $navigation-color;
+  }
+
+  @include tablet {
+    height: 2.375rem;
+    padding: 8px 14px;
+  }
+}

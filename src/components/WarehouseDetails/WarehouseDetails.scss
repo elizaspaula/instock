@@ -1,0 +1,111 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+
+.details-subheader {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid $outline-divider-color;
+  @include flexed(row, space-between, center);
+  @include tablet {
+    padding: 1.25rem 2rem;
+  }
+  &__block {
+    @include flexed(row, flex-start, baseline);
+    gap: 0.5rem;
+  }
+}
+
+.details {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid $outline-divider-color;
+  @include tablet {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  &__address {
+    margin-bottom: 2rem;
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      width: 60%;
+      padding: 0 2.5rem;
+      border-left: 1px solid $outline-divider-color;
+    }
+    
+    &-name {
+      width: 50%
+    }
+
+    &-info {
+      width: 50%;
+    }
+  }
+
+  &__title {
+    color: $table-placeholders-color;
+    text-transform: uppercase;
+  }
+}
+
+.column-labels {
+  display: none;
+  padding: 1rem 1.5rem;
+  background-color: $page-background-color;
+  @include tablet {
+    @include flexed(row, space-between, center);
+    padding: 1rem 2rem;
+  }
+
+  &__left {
+    width: 70%;
+    @include flexed(row, space-between, center);
+  }
+
+  &__right {
+    width: 30%;
+    @include flexed(row, space-between, center);
+  }
+
+  &__column {
+    @include flexed(row, flex-start, center);
+  }
+
+  &__item {
+    width: 30%;
+  }
+
+  &__category {
+    width: 30%;
+  }
+
+  &__status {
+    width: 40%;
+  }
+
+  &__text {
+    text-transform: uppercase;
+    color: $table-placeholders-color;
+  }
+
+  &__sort-icon {
+    height: 15px;
+  }
+}
+
+.loading-message {
+  text-align: center;
+  margin: 1rem 0;
+  color: $outline-divider-color;
+}
+

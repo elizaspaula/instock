@@ -1,0 +1,33 @@
+@use "./partials/global" as *;
+@use "./partials/colors" as *;
+@use "./partials/mixins" as *;
+
+.App {
+  position: relative;
+}
+
+.page-container {
+  padding: 1rem;
+  position: absolute;
+  left: 0rem;
+  top: 8.5rem;
+  width: 100%;
+  min-height: calc(100vh - 8.5rem);
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  flex-direction: column;
+  @include tablet {
+    min-height: calc(100vh - 5.25rem);
+    padding: 0 2rem;
+    top: 5.25rem;
+  }
+  &__inner {
+    width: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    max-width: 63.75rem;
+    background: $global-color;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+}

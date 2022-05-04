@@ -1,0 +1,31 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+
+.box-shadow {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.back-icon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.75rem;
+}
+.save-btn {
+  width: 45%;
+  text-align: center;
+  background-color: $interactive-color;
+  border: 1px solid $interactive-color;
+  color: $global-color;
+  border-radius: 20px;
+  padding: 0.5rem;
+  &:hover {
+    background-color: $navigation-color;
+    border: 1px solid $navigation-color;
+  }
+  @include tablet {
+    width: 9%;
+  }
+  @include desktop {
+    width: 7%;
+  }
+}

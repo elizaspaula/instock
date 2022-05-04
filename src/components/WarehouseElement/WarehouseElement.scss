@@ -1,0 +1,140 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+
+.warehouse-item {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid $outline-divider-color;
+  @include tablet {
+    @include flexed(row, space-between, center);
+    padding:1rem 2rem;
+  }
+  @include desktop {
+    padding: 1rem 2.5rem;
+  }
+  &__details {
+    @include flexed(row, space-between, flex-start);
+    @include tablet {
+      width: 63%;
+      @include flexed(row, space-between, center);
+      //gap:5.75rem;
+    }
+    @include desktop{
+      width:70%;
+    }
+    &--right {
+      width: 100%;
+      @include tablet {
+        @include flexed(row, space-between, center);
+        width: 46%;
+      }
+      @include desktop {
+        width:30%;
+      }
+    }
+  }
+  &__details-block {
+    width: 50%;
+    @include tablet {
+      width: unset;
+    }
+    &--left {
+      @include tablet {
+        @include flexed(row, space-between, center);
+        width: 63%;
+        //gap:3.5rem;
+      }
+    }
+    &--right {
+      @include tablet {
+        width: 40%;
+
+      }
+      @include desktop {
+        width: 28%;
+      }
+    }
+  }
+  &__column {
+    margin-bottom: 1rem;
+    @include tablet {
+      margin-bottom: 0;
+    }
+    &--status {     // MAY NOT NEED THIS
+      width: 40%;
+    }
+  }
+  &__label {
+    text-transform: uppercase;
+    color: $table-placeholders-color;
+    @include tablet {
+      display: none;
+    }
+  }
+  &__contactName {
+    @include tablet {
+      padding-left:0.75rem;
+    }
+  }
+  &__contactInformation {
+    @include tablet {
+      display: none;
+    }
+    &--tablet {
+      display: none;
+      @include tablet {
+        display: block;
+      }
+    }
+  }
+  &__address {
+    width: 50%;
+    @include desktop {
+      width:53%;
+    }
+  }
+  &__actions {
+    width: 100%;
+    @include flexed(row, space-between, center);
+    @include tablet {
+      width: unset;
+      margin-right:0.5rem;
+      gap:0.5rem;
+    }
+  }
+  &__delete-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  &__text {
+    &-block {
+      @include flexed(row, flex-start, center);
+    }
+    &--warehouse {
+      color: $interactive-color;
+    }
+    &--address {
+      @include tablet{ 
+        padding-left:0.75rem;
+      }
+      @include desktop{
+        padding-left:0rem;
+      }
+    }
+  }
+//   &__stock {
+//     padding: 0.1rem 0.3rem;
+//     width: fit-content;
+//     border-radius: 20px;
+//     background-color: $delete-color-opaque;
+//     text-align: center;
+//     text-transform: uppercase;
+//     color: $delete-color;
+//     font-size: 0.75rem;
+//     &--true {
+//       background-color: $label-color-opaque;
+//       color: $label-color;
+//     }
+//   }
+}

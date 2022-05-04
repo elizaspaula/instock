@@ -1,0 +1,17 @@
+@use "../../styles/partials/mixins" as *;
+
+.edit-button {
+  @include button-ify(fit-content);
+  &__icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    filter: brightness(100) saturate(0);
+  }
+  &__text {
+    display: none;
+    @include tablet {
+      display: block;
+    }
+  }
+}

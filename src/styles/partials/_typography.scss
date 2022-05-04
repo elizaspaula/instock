@@ -1,0 +1,124 @@
+@use "./colors" as *;
+@use "./fonts" as *;
+@use "./mixins" as *;
+
+//Typography Rules
+
+//Mobile
+
+//Page Header
+h1 {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  font-weight: $semi-bold;
+}
+
+//Page Subheader
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: $semi-bold;
+}
+
+//Table Headers
+h4 {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  font-weight: $semi-bold;
+}
+
+.body-large {
+  p {
+    font-size: 0.9375rem;
+    line-height: 1.625rem;
+    font-weight: $regular;
+  }
+}
+
+.body-medium {
+  p {
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    font-weight: $regular;
+  }
+}
+
+.body-small {
+  p {
+    font-size: 0.6875rem;
+    line-height: 1rem;
+    font-weight: $regular;
+  }
+}
+
+//Label,links & btn
+.label,
+.links,
+.btn {
+  h3 {
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    font-weight: $semi-bold;
+  }
+}
+
+//Desktop & Tablet
+
+@include tablet {
+  //Page Header
+  h1 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: $semi-bold;
+  }
+
+  //Page Subheader
+  h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: $semi-bold;
+  }
+
+  //Table Headers
+  h4,
+  th {
+    font-size: 0.75rem;
+    line-height: 1.375rem;
+    font-weight: $semi-bold;
+  }
+
+  .body-large {
+    p {
+      font-size: 1rem;
+      line-height: 1.75rem;
+      font-weight: $regular;
+    }
+  }
+
+  .body-medium {
+    p {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+      font-weight: $regular;
+    }
+  }
+
+  .body-small {
+    p {
+      font-size: 0.75rem;
+      line-height: 1.125rem;
+      font-weight: $regular;
+    }
+  }
+
+  //Label,links & btn
+  .label,
+  .links,
+  .btn {
+    h3 {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+      font-weight: $semi-bold;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+#add-warehouse {
+  @include tablet {
+    width: 138px;
+  }
+}
+
+.details {
+  &__container {
+    padding: 1rem 1.5rem;
+    margin: 0;
+  }
+  &__subheader {
+    padding-bottom: 0.5;
+  }
+  &__input {
+    margin-bottom: 0;
+    outline: none;
+    &--error {
+      border: 1px solid $delete-color;
+      &:focus {
+        border: 2px solid $delete-color;
+      }
+    }
+  }
+  &__label {
+    padding-top: 1rem;
+  }
+  &__err {
+    display: none;
+    font-size: 0.75rem;
+    color: #c94515;
+    &--img {
+      height: 13px;
+    }
+    &__input {
+        margin-bottom: 0;
+        outline: none;
+        &--error{
+            border: 1px solid $delete-color;
+            &:focus{
+                border: 2px solid $delete-color;
+            }
+        }
+    }
+    &__label {
+        padding-top: 1rem;
+    }
+    &__err {
+        display: none;
+        font-size: .75rem;
+        color: #C94515;
+        &--img {
+            height: 13px;
+        }
+    }
+}
+
+}
+

@@ -1,0 +1,52 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.search {
+  padding-bottom: 1rem;
+
+  @include tablet {
+    padding: 0;
+  }
+
+  &__text {
+    border: 1px solid $outline-divider-color;
+    background-color: $global-color;
+    width: 100%;
+    height: 2.25rem;
+    border-radius: 2.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+
+    @include tablet {
+      width: 11.5625rem;
+      height: 2.375rem;
+    }
+
+    @include desktop {
+      width: 17.125rem;
+    }
+  }
+
+  &__input {
+    border-style: none;
+    width: 75%;
+    padding: 0 8px;
+
+    &::-webkit-input-placeholder {
+      color: rgba(92, 102, 126, 1);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  &__wh {
+    @include tablet{
+      width:40%; 
+    }
+  }
+}

@@ -1,0 +1,118 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles//partials/typography" as *;
+
+
+.warehouses {
+    &__list {
+      border-top: 1px solid $outline-divider-color;
+      padding: 0 1.5rem;
+    }
+}
+
+.column-labelsWH {
+  display: none;
+  padding: 1rem 1.5rem;
+  background-color: $page-background-color;
+  @include tablet {
+    @include flexed(row, space-between, center);
+    padding: 1rem 2rem;
+  }
+  @include desktop {
+    padding: 1rem 2.5rem;
+  }
+
+  &__left {
+    //width: 60%;
+    @include flexed(row, space-between, center);
+    &--wh{
+      @include tablet{
+        width: 63%;
+        margin-right:0.5rem;
+      }
+      @include desktop {
+        width:70%;
+        margin-right:0rem;
+      }
+    }
+  }
+
+  &__right {
+    //width: 40%;
+    @include flexed(row, space-between, center);
+    &--wh {
+      @include tablet {
+        width:50%;
+      }
+      @include desktop {
+        width:30%;
+      }
+    }
+  }
+
+  &__column {
+    @include flexed(row, flex-start, center);
+  }
+
+  &__wh {
+    width: 33%;
+  }
+
+  &__address {
+    @include tablet{
+      width: 26%;
+      //padding-left:1.5rem;
+    }
+    @include desktop {
+      width:43%;
+    }
+  }
+
+  &__contactName {
+    @include tablet {
+    width: 33%;
+    //padding-left:1rem;
+    //margin-right:3rem;
+    }
+    @include desktop {
+      width:37%;
+    }
+  }
+
+  &__contactInformation {
+    width:82%;
+    //padding-left:2rem;
+  }
+
+  &__actions {
+    //width:30%;
+    &--wh { 
+      @include tablet { 
+        width:18%;
+      }
+    }
+  }
+
+  &__text {
+    text-transform: uppercase;
+    color: $table-placeholders-color;
+    &--contName {
+      @include desktop {
+        padding-left:2.75rem;
+      }
+      
+    }
+  }
+
+  &__sort-icon {
+    height: 15px;
+    @include desktop {
+      padding-left:0.5rem;
+    }
+  }
+}
+
+
+ 

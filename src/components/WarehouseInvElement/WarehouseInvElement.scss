@@ -1,0 +1,110 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+
+.inventory-item {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid $outline-divider-color;
+  @include tablet {
+    @include flexed(row, space-between, center);
+    padding: 1rem 2rem;
+  }
+  &__details {
+    @include flexed(row, space-between, flex-start);
+    @include tablet {
+      width: 70%;
+      @include flexed(row, space-between, center);
+    }
+    &--right {
+      width: 100%;
+      @include tablet {
+        @include flexed(row, space-between, center);
+        width: 30%;
+      }
+    }
+  }
+  &__details-block {
+    width: 50%;
+    @include tablet {
+      width: unset;
+    }
+    &--left {
+      @include tablet {
+        @include flexed(row, space-between, center);
+        width: 60%;
+      }
+    }
+    &--right {
+      @include tablet {
+        width: 40%;
+      }
+    }
+  }
+  &__column {
+    margin-bottom: 1rem;
+    @include tablet {
+      margin-bottom: 0;
+    }
+    &--status {
+      width: 40%;
+    }
+  }
+  &__label {
+    text-transform: uppercase;
+    color: $table-placeholders-color;
+    @include tablet {
+      display: none;
+    }
+  }
+  &__quantity {
+    @include tablet {
+      display: none;
+    }
+    &--tablet {
+      display: none;
+      @include tablet {
+        display: block;
+      }
+    }
+  }
+  &__category {
+    width: 50%;
+  }
+  &__actions {
+    width: 100%;
+    margin-bottom: 0;
+    @include flexed(row, space-between, center);
+    @include tablet {
+      width: unset;
+      gap: 1rem;
+    }
+  }
+  &__delete-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  &__text {
+    &-block {
+      @include flexed(row, flex-start, center);
+    }
+    &--item {
+      color: $interactive-color;
+    }
+  }
+  &__stock {
+    padding: 0.2rem 0.5rem;
+    width: fit-content;
+    border-radius: 20px;
+    background-color: $delete-color-opaque;
+    text-align: center;
+    text-transform: uppercase;
+    color: $delete-color;
+    font-size: 0.75rem;
+    &--true {
+      background-color: $label-color-opaque;
+      color: $label-color;
+    }
+  }
+}
